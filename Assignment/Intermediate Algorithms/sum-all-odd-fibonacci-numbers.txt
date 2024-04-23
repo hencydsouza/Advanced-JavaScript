@@ -1,0 +1,15 @@
+function sumFibs(num) {
+  let num1 = 0
+  let num2 = 1
+  let sum = 0
+
+  while (num2 <= num) {
+    sum += num2 % 2 == 0 ? 0 : num2
+    let temp = num1 + num2
+    num1 = num2
+    num2 = temp
+  }
+  return sum
+}
+
+sumFibs(4);

@@ -1,0 +1,10 @@
+function palindrome(str) {
+  str = str.toLowerCase()
+  str = str.replace(/[\s-(),_:.*|/]/gi, "")
+  if(str == str.split('').reverse().join(''))
+    return true
+  console.log(str)
+  return false;
+}
+
+palindrome("eye");

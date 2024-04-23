@@ -1,0 +1,18 @@
+function diffArray(arr1, arr2) {
+  const newArr = [];
+  arr1.forEach(ele => {
+    if (!(arr2.indexOf(ele) > -1)) {
+      newArr.push(ele)
+    }
+  })
+  arr2.forEach(ele => {
+    if (!(arr1.indexOf(ele) > -1)) {
+      newArr.push(ele)
+    }
+  })
+  console.log(newArr)
+
+  return newArr;
+}
+
+diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);

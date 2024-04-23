@@ -1,0 +1,18 @@
+function translatePigLatin(str) {
+  if (['a', 'e', 'i', 'o', 'u'].indexOf(str.charAt(0)) > -1) {
+    str += 'way'
+  } else {
+    let sub = ''
+    let i
+    for (i = 0; i < str.length; i++) {
+      if ((['a', 'e', 'i', 'o', 'u'].indexOf(str.charAt(i)) > -1)) {
+        break;
+      } else sub += str.charAt(i)
+    }
+    str = str.slice(i)+sub+'ay'
+    console.log(str)
+  }
+  return str;
+}
+
+translatePigLatin("consonant");

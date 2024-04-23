@@ -1,0 +1,13 @@
+.calculator {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+#display {
+    text-align: right;
+}
+
+.btn {
+    font-size: 1.5rem;
+    margin: 2px;
+}
