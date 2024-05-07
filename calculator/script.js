@@ -19,12 +19,15 @@ function calculate() {
     const display = document.getElementById("display");
     try {
         const query = display.value
-        const result = eval(display.value);
-        display.value = result;
-        history.push(query + "=" + result)
-        saveData(history)
-        displayHistory()
-        // memory = result;
+        if (query) {
+            const result = eval(display.value);
+            // display.value = result;
+            display.value =""
+            history.push(query + " = " + result)
+            saveData(history)
+            displayHistory()
+            // memory = result;
+        }
     } catch (error) {
         display.value = "Error";
     }
@@ -71,10 +74,9 @@ function memoryClear() {
 }
 
 function clearStorage() {
-    localStorage.setItem('history', '')
-    history = loadData()
+    saveData(JSON.stringify())
     histryEle.innerHTML = ""
-    location.reload()
+    window.location = window.location
 }
 
 document.getElementById('clear').addEventListener('click', () => {
@@ -84,7 +86,7 @@ document.getElementById('clear').addEventListener('click', () => {
 function displayHistory() {
     histryEle.innerHTML = ""
     for (let i = 0; i < history.length; i++) {
-        histryEle.innerHTML += `<li>${history[i]}</li>`
+        histryEle.innerHTML += `<li class="list-group-item">${history[i]}</li>`
     }
 }
 
