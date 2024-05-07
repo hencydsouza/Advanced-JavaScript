@@ -11,3 +11,12 @@
     font-size: 1.5rem;
     margin: 2px;
 }
+
+#history{
+    list-style-type: none;
+    list-style: none;
+    font-size: 1.2rem;
+}
+
+#history li{
+}
